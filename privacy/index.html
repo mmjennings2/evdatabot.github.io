@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVDataBot Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 20px; line-height: 1.6; color: #333; max-width: 600px; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; margin-top: 24px; }
+  p, li { font-size: 15px; }
+  .updated { color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>EVDataBot Privacy Policy</h1>
+<p><strong>Effective:</strong> 2026-05-17</p>
+
+<h2>Overview</h2>
+<p>EVDataBot is designed with your privacy in mind. All vehicle data is stored locally on your device. We do not operate servers, collect analytics, or transmit your vehicle data to any third party.</p>
+
+<h2>Data We Collect</h2>
+
+<h3>Vehicle Telemetry</h3>
+<p>When connected to your OBD adapter, EVDataBot reads diagnostic data from your vehicle including battery state of charge, voltage, current, temperature, tire pressures, speed, and odometer readings. This data is stored only on your device in a local database.</p>
+
+<h3>Location Data</h3>
+<p>EVDataBot uses your device's GPS to track trip routes, calculate mileage, and record elevation changes. Location data is stored locally on your device and is never transmitted to our servers (we do not operate any servers).</p>
+
+<h3>Bluetooth</h3>
+<p>EVDataBot uses Bluetooth (BLE and/or Classic Bluetooth) to communicate with your OBD-II adapter. We store a device identifier for your adapter locally to enable automatic reconnection. No Bluetooth data is transmitted externally.</p>
+
+<h2>Third-Party Services</h2>
+
+<h3>Weather Data (Open-Meteo)</h3>
+<p>EVDataBot fetches current weather conditions from the <a href="https://open-meteo.com/">Open-Meteo</a> API to correlate weather with driving efficiency. This requires sending your current GPS coordinates to Open-Meteo's servers. Open-Meteo is a free, open-source weather API. Please refer to <a href="https://open-meteo.com/en/terms">Open-Meteo's terms</a> for their data handling practices.</p>
+
+<h2>Data Storage</h2>
+<p>All trip data, OBD samples, route points, and settings are stored locally on your device using Apple's SwiftData framework and standard file storage. Data is not backed up to any external server.</p>
+
+<h3>App Group / Shared Storage</h3>
+<p>Data shared across the EVDataBot app, its iOS widget, and Live Activity uses Apple's App Group storage (group identifier <code>group.vcolives.EVDataBot</code>). All shared data remains on your device.</p>
+
+<h3>Required-Reason API Disclosures</h3>
+<p>EVDataBot uses Apple's required-reason API for UserDefaults (storing your preferences and our cached entitlement state). This is declared in our privacy manifest (<code>PrivacyInfo.xcprivacy</code>) under reason code CA92.1.</p>
+
+<h2>Data Sharing</h2>
+<p>EVDataBot does not share your data with any third parties. You can manually export your trip data as CSV files via the app's export feature. Any exported files are handled through your device's standard share sheet.</p>
+
+<h2>In-App Purchases</h2>
+<p>EVDataBot offers a single $4.99 one-time unlock for Premium features via Apple's StoreKit. All payment processing is handled by Apple — no payment information reaches our servers (we have no servers). A 7-day trial is available without payment.</p>
+<p>Premium unlocks include CarPlay Charging, Trip, and Vehicle tabs, advanced insights, and the EV Health Report deep sections. Basic functionality (Dashboard, Trip history, Reports, basic Battery CarPlay tab, and the Drive Coach CarPlay tab) is always free.</p>
+
+<h2>Data Deletion</h2>
+<p>You can delete individual trips from the Trip History screen. Uninstalling the app removes all stored data from your device.</p>
+
+<h2>Children's Privacy</h2>
+<p>EVDataBot is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+<h2>Changes to This Policy</h2>
+<p>We may update this privacy policy from time to time. Changes will be reflected in the app with an updated date.</p>
+
+<h2>Contact</h2>
+<p>For privacy-related questions, contact <a href="mailto:privacy@vcolives.com">privacy@vcolives.com</a>.</p>
+
+</body>
+</html>
