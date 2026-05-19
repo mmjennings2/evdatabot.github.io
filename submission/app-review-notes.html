@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Review Notes — ASC Paste</title>
+<link rel="stylesheet" href="_copyblock.css">
+<script defer src="_copy.js"></script>
+</head>
+<body>
+<div class="nav"><a href="index.html">← All paste blocks</a></div>
+<h1>App Review Notes</h1>
+<p class="note">ASC field: <strong>App Review Information → Notes</strong>. Apple reviewer reads this BEFORE testing the binary.</p>
+
+<div class="warn">
+<strong>Two placeholders need to be filled in before you paste:</strong>
+<ol>
+  <li><code>[VIDEO URL]</code> — paste the Vimeo Unlisted URL once you've recorded the demo video. <strong>If you don't have a video yet, leave the line out entirely</strong> — Apple does NOT require a video link; the 7-tap Demo Mode walkthrough is sufficient. Just delete that one line from the paste below.</li>
+  <li><code>[CONTACT EMAIL]</code> — use whichever email you chose on the <a href="app-privacy-contact.html">App Privacy Contact</a> page. Already set to <code>privacy@vcolives.com</code> below; if you picked <code>mjennings2@gmail.com</code> instead, change it before pasting.</li>
+</ol>
+</div>
+
+<button class="copy" data-target="block" onclick="copyBlock(this)">Copy to clipboard</button>
+<p class="char-count" data-char-count="block"></p>
+<textarea id="block" class="tall" readonly>EVDataBot is an OBD-II telemetry app for Ford F-150 Lightning owners.
+
+HARDWARE REQUIREMENT:
+The app reads live data from an OBD-II adapter plugged into the vehicle's OBD port. Without an adapter and a Lightning, the app cannot stream live data. Supported adapters:
+- OBDLink CX (Bluetooth Low Energy)
+- OBDLink MX+ (MFi-certified Classic Bluetooth — uses ExternalAccessory framework with protocol "com.obdlink")
+- vLinker FS (Bluetooth Low Energy)
+
+DEMO MODE for App Review:
+We've included a built-in Demo Mode so the reviewer can test the full app flow without an adapter:
+1. Open the app and complete (or skip) onboarding.
+2. Open Settings (gear icon, bottom right).
+3. Scroll to the bottom to find the "Version" row.
+4. Tap the Version row 7 TIMES in quick succession (within 2 seconds).
+5. A "Diagnostics" section will appear above the Version row. Inside, toggle "Demo Mode" ON.
+6. Return to the main Dashboard. Live battery state of charge, voltage, and pack temperature values will start streaming. The values come from a synthetic capture of a real Lightning trip; an orange "DEMO MODE" banner at the top of the screen makes this clear.
+7. CarPlay tabs also populate from the same synthetic stream. To exercise CarPlay during review:
+   - In Xcode Simulator: I/O → External Displays → CarPlay (opens a CarPlay simulator window)
+   - In the CarPlay window, tap EVDataBot
+   - Drive Coach + Battery tabs are free; Charging, Trip, and Vehicle tabs show an "Unlock Premium for $4.99" row when premium is inactive
+   - A "DEMO MODE — synthetic data" row appears as the first item on the Battery CarPlay tab when Demo Mode is on
+
+PRIVACY:
+EVDataBot is local-only — no accounts, no cloud sync, no analytics SDKs. All trip data and OBD samples stay on the device. The only network call is to Open-Meteo (open-meteo.com) for weather correlation. Privacy Policy: https://mmjennings2.github.io/evdatabot.github.io/privacy/
+
+BACKGROUND MODES:
+- bluetooth-central: declared for foreground BLE communication with the OBD-II adapter (OBDLink CX or vLinker FS) during a trip. Per TN3115, iOS 26 only relaunches AccessorySetupKit-paired Bluetooth peripherals; this app does not use AccessorySetupKit and does not rely on system-initiated background relaunch. Reconnection is initiated by the user foregrounding the app.
+- external-accessory: required for MFi communication with the OBDLink MX+ Classic-Bluetooth adapter via the ExternalAccessory framework. Declared protocol: com.obdlink. Communication is gated on user-visible foreground trip state.
+- location: required to record trip routes on a map and correlate weather conditions with driving efficiency. Trip routes are stored locally on device and are never transmitted off device.
+
+IN-APP PURCHASE:
+Single non-consumable IAP at $4.99 USD: "EVDataBot Premium (Lifetime)" — Product ID com.vcolives.evdatabot.premium.lifetime — unlocks CarPlay Charging/Trip/Vehicle tabs, advanced insights, and EV Health Report deep sections. A 7-day trial is also available (UserDefaults-based clock, NOT a StoreKit intro offer). Restore Purchases is visible on both the Paywall and the Settings → Subscription section.
+
+PERMISSIONS REQUESTED:
+- Bluetooth: required to connect to the OBD adapter. The permission prompt copy explicitly names the supported adapters and the Lightning vehicle.
+- Location (When In Use): required to record trip routes on a map. Data stays on-device.
+- Location (Always, optional): only requested if the user enables Auto-Trip Detection in Settings.
+
+If you have questions during review, please contact privacy@vcolives.com.</textarea>
+
+<p class="meta">If your video is ready and you want me to update this paste-block with the Vimeo URL, tell me the URL and I'll commit + push the update.</p>
+
+</body>
+</html>

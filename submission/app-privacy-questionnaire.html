@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Privacy Questionnaire — Reference</title>
+<link rel="stylesheet" href="_copyblock.css">
+</head>
+<body>
+<div class="nav"><a href="index.html">← All paste blocks</a></div>
+<h1>App Privacy Questionnaire</h1>
+<p class="note">ASC section: <strong>App Privacy</strong>. This is a click-through questionnaire, not a paste field. Use the table below to answer each question. <strong>The answers MUST match <a href="https://github.com/mmjennings2/evdatabot.github.io/blob/main/privacy/index.html">the privacy manifest</a> in the iOS app exactly</strong> — Apple's automated comparator can pull the app post-acceptance if there's a mismatch.</p>
+
+<h2>Top-level question</h2>
+<p><strong>Q: Do you or your third-party partners collect data from this app?</strong><br>
+<strong>A: Yes</strong> — Apple's definition of "collect" includes "the app reads the data on-device" even if it's never transmitted. EVDataBot reads CLLocation, so this answer is Yes.</p>
+
+<p><strong>Q: Tracking?</strong><br>
+<strong>A: No</strong> — <code>NSPrivacyTracking=false</code> in both privacy manifests.</p>
+
+<h2>Per-category answers</h2>
+<table>
+<thead>
+<tr><th>Category</th><th>Collected?</th><th>If yes: Linked?</th><th>Tracking?</th><th>Purposes</th></tr>
+</thead>
+<tbody>
+<tr><td>Contact Info</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Health &amp; Fitness</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Financial Info (Payment, Credit, Other)</td><td>No — Apple handles all payment via StoreKit</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>Location — Precise</strong></td><td><strong>Yes</strong></td><td><strong>Not Linked to User</strong> (no accounts)</td><td><strong>Not Tracking</strong></td><td>App Functionality (trip route recording + weather correlation)</td></tr>
+<tr><td>Location — Coarse</td><td>No (we always request precise)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sensitive Info</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Contacts</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>User Content</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Browsing History</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Search History</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Identifiers</td><td>No — app uses no IDFA or other identifiers</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Purchases (Purchase History)</td><td>No — Apple handles</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Usage Data</td><td>No — no analytics SDKs, no telemetry off-device</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Diagnostics</td><td>No — MetricKit stays on-device in App Group UserDefaults; user-initiated Share only</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Surroundings</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Body</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Other Data</td><td>No</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h2>Why "Location — Precise" is Yes</h2>
+<p>Apple's questionnaire treats "the app reads precise location" as "collected" regardless of whether the data leaves the device. EVDataBot reads <code>CLLocation</code> for trip route recording — answering "No" because data stays on-device would be a mismatch that Apple's automated comparator flags.</p>
+
+<h2>Submission checklist before saving</h2>
+<ul class="checklist">
+  <li>Re-read this table against the live <a href="https://github.com/mmjennings2/evdatabot.github.io/blob/main/privacy/index.html">privacy policy</a> right before submission — verify Location is the only "collected" data type.</li>
+  <li>Confirm the manifest cross-reference in the iOS app at <code>EVDataBot/Resources/PrivacyInfo.xcprivacy</code> declares precisely the same single data type.</li>
+  <li>App Privacy Contact email is set per the <a href="app-privacy-contact.html">App Privacy Contact</a> block.</li>
+</ul>
+
+</body>
+</html>

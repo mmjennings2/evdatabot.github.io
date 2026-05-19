@@ -5,6 +5,7 @@ Static site hosting for **EVDataBot** — OBD-II telemetry app for Ford F-150 Li
 This repository serves the public-facing pages that App Store Connect references during App Review:
 
 - **Privacy Policy** — [`/privacy/`](https://mmjennings2.github.io/evdatabot.github.io/privacy/)
+- **ASC submission paste-blocks** — [`/submission/`](https://mmjennings2.github.io/evdatabot.github.io/submission/) (subtitle, description, keywords, App Review Notes, etc., each with a Copy button)
 
 ## Stability notice
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Description — ASC Paste</title>
+<link rel="stylesheet" href="_copyblock.css">
+<script defer src="_copy.js"></script>
+</head>
+<body>
+<div class="nav"><a href="index.html">← All paste blocks</a></div>
+<h1>Description</h1>
+<p class="note">ASC field: <strong>App Information → Description</strong>. First 250 chars become the visible "hook" before the "more" cutoff in search results.</p>
+<button class="copy" data-target="block" onclick="copyBlock(this)">Copy to clipboard</button>
+<p class="char-count" data-char-count="block"></p>
+<textarea id="block" class="tall" readonly>EVDataBot shows Lightning owners what their truck is actually doing — accurate battery telemetry, trip efficiency, and live CarPlay gauges. No accounts. No cloud sync. No analytics SDKs. Your data stays on your device.
+
+EVDataBot connects to your OBD-II adapter (OBDLink CX, OBDLink MX+, or vLinker FS — Bluetooth) and reads live data from your Ford F-150 Lightning's battery management system. You see:
+
+• Real-time battery state of charge, voltage, current, and pack temperature
+• Live efficiency (mi/kWh) and projected range
+• Trip history with route maps and per-trip efficiency
+• Live Activity + Lock Screen widgets during trips
+• CarPlay tab with live Drive Coach (efficiency, range, power) at a glance
+
+Premium ($4.99 one-time, or a 7-day free trial) unlocks:
+• CarPlay Charging tab — session cost, peak power, curve
+• CarPlay Trip tab — full trip detail at a glance
+• CarPlay Vehicle tab — climate, tire pressures, advanced HVB data
+• Advanced insights and the EV Health Report deep sections
+
+Why local-only? Your trip data and OBD readings stay on your device. We have no servers. We have no analytics SDKs. We don't know who you are or what you drive — and that's by design.
+
+REQUIREMENTS:
+• Ford F-150 Lightning (any model year, ER recommended)
+• A supported OBD-II adapter:
+  - OBDLink CX (Bluetooth Low Energy)
+  - OBDLink MX+ (MFi-certified Classic Bluetooth)
+  - vLinker FS (Bluetooth Low Energy)
+• iOS 26.2 or later
+
+Built by a Lightning owner who got tired of waiting for the data the truck already has.</textarea>
+</body>
+</html>
