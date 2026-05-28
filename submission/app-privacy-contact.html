@@ -10,20 +10,11 @@
 <body>
 <div class="nav"><a href="index.html">← All paste blocks</a></div>
 <h1>App Privacy Contact</h1>
-<p class="note">ASC field: <strong>App Information → App Privacy Contact</strong>. Must be a real, reachable email — Apple sends review questions here.</p>
+<p class="note">ASC field: <strong>App Information → App Privacy Contact</strong>. Apple sends review questions to this email. Matches the address in the hosted privacy policy at evdatabot.com/privacy.</p>
 
-<div class="warn">
-<strong>Decision:</strong> Plan 06-05 defaulted to <code>privacy@vcolives.com</code>, but that requires DNS / forwarding setup. If that isn't live yet, paste your real Gmail address below instead — you can swap to the vcolives address in a later v1.0.X update once the forwarding is configured.
-</div>
+<button class="copy" data-target="block" onclick="copyBlock(this)">Copy to clipboard</button>
+<textarea id="block" class="short" readonly>support@evdatabot.com</textarea>
 
-<h2>Option A — vcolives alias (requires DNS forwarding to be live)</h2>
-<button class="copy" data-target="block-a" onclick="copyBlock(this)">Copy to clipboard</button>
-<textarea id="block-a" class="short" readonly>privacy@vcolives.com</textarea>
-
-<h2>Option B — real Gmail (works immediately)</h2>
-<button class="copy" data-target="block-b" onclick="copyBlock(this)">Copy to clipboard</button>
-<textarea id="block-b" class="short" readonly>mjennings2@gmail.com</textarea>
-
-<p class="meta">If you choose Option B, also update <code>EVDataBot/Resources/privacy-policy.html</code> Contact section and the App Review Notes paste-block to match — they currently reference Option A. Tell me and I'll update both.</p>
+<p class="meta">If this field doesn't appear on your account, Apple has folded it into the App Privacy questionnaire OR derives the contact from the hosted privacy policy URL. No action needed in that case.</p>
 </body>
 </html>
